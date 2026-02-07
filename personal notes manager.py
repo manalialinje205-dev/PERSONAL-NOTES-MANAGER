@@ -29,13 +29,13 @@ def add_note():
 
     notes.append(note)
     save_notes(notes)
-    print("✅ Note added successfully!")
+    print("Note added successfully!")
 
 
 def view_notes():
     notes = load_notes()
     if not notes:
-        print("📭 No notes found.")
+        print(" No notes found.")
         return
 
     for note in notes:
@@ -54,10 +54,10 @@ def edit_note():
             note["title"] = input("New title: ")
             note["content"] = input("New content: ")
             save_notes(notes)
-            print("✏️ Note updated!")
+            print(" Note updated!")
             return
 
-    print("❌ Note not found.")
+    print(" Note not found.")
 
 
 def delete_note():
@@ -67,10 +67,10 @@ def delete_note():
     new_notes = [note for note in notes if note["id"] != note_id]
 
     if len(notes) == len(new_notes):
-        print("❌ Note not found.")
+        print(" Note not found.")
     else:
         save_notes(new_notes)
-        print("🗑️ Note deleted!")
+        print(" Note deleted!")
 
 
 def menu():
@@ -93,11 +93,12 @@ def menu():
         elif choice == "4":
             delete_note()
         elif choice == "5":
-            print("👋 Goodbye!")
+            print(" Goodbye!")
             break
         else:
-            print("⚠️ Invalid choice!")
+            print("Invalid choice!")
 
 
 if __name__ == "__main__":
+
     menu()
